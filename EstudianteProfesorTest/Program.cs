@@ -34,6 +34,8 @@ namespace EstudianteProfesorTest
                     Console.ReadKey();
                     break;
                 case 2:
+                    Estudiante estudiante4;
+                    Profesor profesor3;
                     Persona estudiante2 = new Estudiante(19, "Juanito");
                     Persona estudiante3 = new Estudiante(20, "Juan");
                     Persona profesor2 = new Profesor(40, "Juanpi");
@@ -42,12 +44,24 @@ namespace EstudianteProfesorTest
                     personas[1] = estudiante3;
                     personas[2] = profesor2;
                     int i = 0;
-                    while(i < personas.Length)
+
+                    Type t;
+                    while (i < personas.Length)
                     {
-                        Console.WriteLine(personas[i]);
-                        
+                        t = personas[i].GetType();
+                        if (t.Equals(typeof(Estudiante)))
+                        {
+                            estudiante4 = (Estudiante)personas[i];
+                            estudiante4.estudiar();
+                        }
+                        else
+                        {
+                            profesor3 = (Profesor)personas[i];
+                            profesor3.explicar();
+                        }
                         i++;
                     }
+
                     Console.ReadKey();
                     break;
                 case 3:

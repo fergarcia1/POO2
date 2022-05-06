@@ -22,10 +22,6 @@ namespace EstudianteProfesorTest
         public Persona()
         {
         }
-
-
-
-
         public void saludar() 
         {
             Console.WriteLine("Hola");
